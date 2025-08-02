@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peniel Kasumba - Designer Graphique & Vidéaste</title>
+    <meta name="description" content="Portfolio créatif de Peniel Kasumba, spécialiste en design graphique et création vidéo">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6C63FF",
+                        secondary: "#4D44DB",
+                        accent: "#FF6584",
+                        dark: "#2D3748",
+                        light: "#F7FAFC",
+                        gradient1: "#8E2DE2",
+                        gradient2: "#4A00E0"
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'gradient': 'gradientBackground 10s ease infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        gradientBackground: {
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' }
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #6C63FF 0%, #4D44DB 50%, #FF6584 100%);
+            background-size: 200% 200%;
+            animation: gradientBackground 10s ease infinite;
+        }
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        .skill-bar-inner {
+            background: linear-gradient(90deg, #6C63FF 0%, #FF6584 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #6C63FF 0%, #FF6584 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">PK</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="font-medium hover:text-primary transition">Accueil</a>
+                    <a href="#projets" class="font-medium hover:text-primary transition">Projets</a>
+                    <a href="#competences" class="font-medium hover:text-primary transition">Compétences</a>
+                    <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl text-primary"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="#accueil" class="block py-2 hover:text-primary">Accueil</a>
+                <a href="#projets" class="block py-2 hover:text-primary">Projets</a>
+                <a href="#competences" class="block py-2 hover:text-primary">Compétences</a>
+                <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center pt-20 hero-gradient text-white">
+        <div class="container mx-auto px-6 py-12 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Peniel <span class="text-accent">Kasumba</span></h1>
+                    <p class="text-xl md:text-2xl mb-8 font-montserrat font-light">Designer Graphique | Web Designer | Vidéaste</p>
+                    <p class="text-white/90 mb-8 max-w-lg">Je transforme les idées en expériences visuelles mémorables à travers des designs percutants et des vidéos captivantes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projets" class="bg-white text-primary px-6 py-3 rounded-lg hover:bg-white/90 transition transform hover:scale-105 glow-effect">Voir mes projets</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition transform hover:scale-105">Me contacter</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-float">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+                        <img src="https://picsum.photos/500/500?random=1" alt="Peniel Kasumba, designer créatif" class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white/20 shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-light to-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                    <h2 class="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">À propos de moi</h2>
+                    <p class="text-lg mb-6 text-dark/90">Designer passionné par la création visuelle, je conçois des supports qui allient esthétique, clarté et impact. Mon approche combine créativité et stratégie pour des résultats qui marquent les esprits.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                        <div class="bg-white/80 p-6 rounded-xl backdrop-blur-sm border border-white/20">
+                            <h3 class="text-xl font-bold mb-4 text-primary">Formation</h3>
+                            <p class="mb-2"><span class="font-semibold">Diplôme:</span> Diplômé d'État en Design Graphique</p>
+                            <p><span class="font-semibold">Spécialisations:</span> Identité visuelle, UI/UX, Motion Design</p>
+                        </div>
+                        <div class="bg-white/80 p-6 rounded-xl backdrop-blur-sm border border-white/20">
+                            <h3 class="text-xl font-bold mb-4 text-primary">Expérience</h3>
+                            <p class="mb-2">+5 ans d'expérience professionnelle</p>
+                            <p>+50 projets réalisés pour des clients internationaux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="py-20 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes <span class="text-gradient">Réalisations</span></h2>
+                <p class="text-dark/70 max-w-2xl mx-auto">Découvrez une sélection de mes projets les plus marquants en design graphique et création vidéo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg h-80">
+                        <img src="https://picsum.photos/600/800?random=2" alt="Projet d'identité visuelle par Peniel Kasumba" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">Identité Visuelle</h3>
+                            <p class="text-gray-200 mb-4">Création complète pour une marque de café premium</p>
+                            <a href="#" class="self-start bg-white text-primary px-4 py-2 rounded hover:bg-gray-100 transition">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg h-80">
+                        <img src="https://picsum.photos/600/800?random=3" alt="Design d'application mobile par Peniel Kasumba" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">UI Mobile</h3>
+                            <p class="text-gray-200 mb-4">Application de gestion financière</p>
+                            <a href="#" class="self-start bg-white text-primary px-4 py-2 rounded hover:bg-gray-100 transition">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg h-80">
+                        <img src="https://picsum.photos/600/800?random=4" alt="Vidéo promotionnelle par Peniel Kasumba" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">Vidéo Promotionnelle</h3>
+                            <p class="text-gray-200 mb-4">Campagne pour un festival culturel</p>
+                            <a href="#" class="self-start bg-white text-primary px-4 py-2 rounded hover:bg-gray-100 transition">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="py-20 bg-gradient-to-br from-dark to-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes <span class="text-gradient">Expertises</span></h2>
+                <p class="text-white/70 max-w-2xl mx-auto">Un panel complet de compétences pour répondre à vos besoins créatifs</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-primary">Design Graphique</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Affiches & Flyers</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Identité Visuelle</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Packaging</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-accent">Digital</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>UI/UX Design</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Montage Vidéo</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Motion Design</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar-inner h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition backdrop-blur-sm">
+                    <i class="fab fa-adobe text-4xl text-primary mb-4"></i>
+                    <h3 class="font-bold mb-2">Photoshop</h3>
+                    <p class="text-white/70">Retouche & composition</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition backdrop-blur-sm">
+                    <i class="fab fa-adobe text-4xl text-primary mb-4"></i>
+                    <h3 class="font-bold mb-2">Illustrator</h3>
+                    <p class="text-white/70">Vectoriel & logo</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition backdrop-blur-sm">
+                    <i class="fas fa-film text-4xl text-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">CapCut</h3>
+                    <p class="text-white/70">Montage vidéo</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition backdrop-blur-sm">
+                    <i class="fas fa-cube text-4xl text-primary mb-4"></i>
+                    <h3 class="font-bold mb-2">Figma</h3>
+                    <p class="text-white/70">Prototypage UI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-3xl shadow-lg border border-white/20 backdrop-blur-sm">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Travaillons ensemble</h2>
+                <p class="text-center text-dark/80 mb-12 max-w-2xl mx-auto">Vous avez un projet créatif ? Discutons-en pour le concrétiser avec un design qui vous ressemble.</p>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Email</h3>
+                                    <a href="mailto:Penielpk15@gmail.com" class="text-dark/80 hover:text-primary transition">Penielpk15@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Téléphone</h3>
+                                    <a href="tel:+243972015074" class="text-dark/80 hover:text-primary transition">+243 972 015 074</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Localisation</h3>
+                                    <p class="text

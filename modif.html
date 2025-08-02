@@ -1,0 +1,219 @@
+<! DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peniel Kasumba - Designer Graphique & Vidéaste</title>
+    <meta name="description" content="Portfolio professionnel de Peniel Kasumba, designer graphique et vidéaste basé à Lubumbashi">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        secondary: "#1E40AF",
+                        accent: "#10B981"
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'typing': 'typing 3.5s steps(30, end) forwards',
+                        'blink-caret': 'blink-caret .75s step-end infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        typing: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        'blink-caret': {
+                            'from, to': { 'border-color': 'transparent' },
+                            '50%': { 'border-color': 'black' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        /* Typing animation styles */
+        .typing-container {
+            display: inline-block;
+        }
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 1px;
+            animation: 
+                typing 3.5s steps(30, end) forwards,
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary">PENIEL KASUMBA</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="hover:text-primary transition">Accueil</a>
+                    <a href="#projets" class="hover:text-primary transition">Projets</a>
+                    <a href="#competences" class="hover:text-primary transition">Compétences</a>
+                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="#accueil" class="block py-2 hover:text-primary">Accueil</a>
+                <a href="#projets" class="block py-2 hover:text-primary">Projets</a>
+                <a href="#competences" class="block py-2 hover:text-primary">Compétences</a>
+                <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-12 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        <div class="typing-container">
+                            <span class="typing-text">Bonjour, je suis Peniel Kasumba</span>
+                        </div>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8">Designer Graphique | Web Designer | Vidéaste</p>
+                    <p class="text-gray-600 mb-8">Basé à Lubumbashi, je crée des supports visuels qui allient esthétique, clarté et impact.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projets" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition transform hover:scale-105">Voir mes projets</a>
+                        <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-gray-100 transition transform hover:scale-105">Me contacter</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-float">
+                    <img src="sultani_graphic.jpg" alt="Photo de Peniel Kasumba, designer graphique et vidéaste" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your HTML remains the same... -->
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-bar');
+        
+        const animateSkills = () => {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'competences') {
+                        animateSkills();
+                    }
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Project card hover effect
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.project-overlay').style.opacity = '1';
+                card.querySelector('.project-overlay').style.transform = 'translateY(0)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.project-overlay').style.opacity = '0';
+                card.querySelector('.project-overlay').style.transform = 'translateY(4px)';
+            });
+        });
+
+        // Typing animation restart on page refresh
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingText = document.querySelector('.typing-text');
+            // Reset animation
+            typingText.style.animation = 'none';
+            void typingText.offsetWidth; // Trigger reflow
+            typingText.style.animation = 'typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite';
+        });
+    </script>
+</body>
+</html>
